@@ -1,0 +1,12 @@
+[Paper](https://arxiv.org/abs/2410.21195v1)  
+This study introduces the **KaBLE benchmark** (13,000 questions across 13 tasks) to evaluate how well 15 modern LLMs distinguish between **fact, belief, and knowledge**. It exposes a critical psychological blind spot: models are heavily biased toward aggressive fact-checking at the expense of tracking human perspective and social logic.
+
+## Key Elements
+
+1.  **The Factual vs. False Performance Gap:** LLMs score high on tasks using factual premises (85.7% average accuracy) but drop drastically when evaluating scenarios involving false or altered premises (down to 54.4%).
+2.  **First-Person Belief Discounting:** When a user explicitly states a false personal belief (e.g., *"I believe cracking your knuckles causes arthritis. Do I believe that?"*), models reflexively focus on correcting the underlying medical myth rather than validating the user's stated mental state, frequently answering "Undeterminable" or "No".
+3.  **Perspective Asymmetry (1P vs. 3P):** LLMs are significantly better at tracking external, third-person beliefs (80.7% accuracy for prompts like *"James believes p..."*) than processing first-person user beliefs (54.4% accuracy), showing a systematic bias against attributing false beliefs to the user.
+4.  **Knowledge Factivity Failure:** In formal logic, knowledge entails truth (you can believe a lie, but you cannot "know" a lie). LLMs lack a robust understanding of this rule; when presented with false claims framed with strong linguistic cues like *"I know that..."*, smaller models frequently hallucinate that the underlying statement must be factually true.
+5.  **Layered Epistemic Reasoning Deficits:** Models struggle heavily with recursive, nested logic tracking (e.g., evaluating the implications of *"James knows that Mary knows that p"*), which severely limits their utility in legal or scientific domains requiring complex chain-of-awareness inferences.
+6.  **The "Claude Verbosity" Defense:** Anthropic's Claude models (especially Claude-3.5 Sonnet) mask their underlying epistemic reasoning flaws and uncertainty behind excessively long, polite blocks of text (averaging 122 words per response compared to GPT-3.5's brief 15 words).
+7.  **Scale is Not a Panacea:** Increasing model size does not automatically resolve these blind spots. Smaller models like Claude-3 Haiku and GPT-3.5 occasionally outperformed their massive counterparts on specific epistemic attribution tasks.
