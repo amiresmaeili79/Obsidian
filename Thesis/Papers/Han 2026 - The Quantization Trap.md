@@ -1,4 +1,6 @@
-# The Quantization Trap
+# The Quantization Trap: Breaking Linear Scaling Laws in Multi-Hop Reasoning (Han 2026)
+
+[Paper](https://arxiv.org/abs/2602.13595) — Han et al., 2026
 
 **The myth:** 4-bit/8-bit quantization cuts memory and energy nearly for free.
 **The reality:** in multi-hop reasoning, aggressive compression can collapse accuracy while *increasing* latency and energy — a "sustainability inversion."
